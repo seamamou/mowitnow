@@ -37,10 +37,10 @@ public class MowerItemReader implements ItemReader<String> {
 
     @Override
     public String read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-        return Scanning(new ClassPathResource(fileName).getFile());
+        return scanning(new ClassPathResource(fileName).getFile());
     }     
 
-    public String Scanning(File file) throws IOException {
+    public String scanning(File file) throws IOException {
 
         try (Scanner scanner = new Scanner(file)) {
             Position position = null;
