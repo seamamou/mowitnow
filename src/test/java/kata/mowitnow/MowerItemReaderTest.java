@@ -31,7 +31,7 @@ class MowerItemReaderTest {
         File file = new File(resource.toURI());
 
         //When
-        mowerItemReader.Scanning(file);
+        mowerItemReader.scanning(file);
 
         //Then
         Assertions.assertEquals(2, mowerItemReader.getMower().getPosition().getX());
@@ -48,7 +48,7 @@ class MowerItemReaderTest {
         File file = new File(resource.toURI());
 
         //When
-        mowerItemReader.Scanning(file);
+        mowerItemReader.scanning(file);
 
         //Then
         Assertions.assertEquals(5, mowerItemReader.getMower().getPosition().getX());
@@ -66,7 +66,7 @@ class MowerItemReaderTest {
         File file = new File(resource.toURI());
 
         //When
-        InvalidPositionException thrown = Assertions.assertThrows(InvalidPositionException.class, () -> mowerItemReader.Scanning(file));
+        InvalidPositionException thrown = Assertions.assertThrows(InvalidPositionException.class, () -> mowerItemReader.scanning(file));
 
         //Then
         Assertions.assertEquals("Invalid Position Data", thrown.getMessage());
