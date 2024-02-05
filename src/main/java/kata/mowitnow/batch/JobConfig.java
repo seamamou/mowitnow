@@ -20,7 +20,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 public class JobConfig {
 
     @Bean
-    public Job Job(JobRepository jobRepository, JobCompletionNotificationListener listener, Step step) {
+    public Job job(JobRepository jobRepository, JobCompletionNotificationListener listener, Step step) {
         return new JobBuilder("Job",jobRepository)
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
